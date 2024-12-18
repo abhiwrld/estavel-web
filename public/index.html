@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="AI-generated website">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="index, follow">
+      
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" as="style">
+      
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  50: '#f0f9ff',
+                  100: '#e0f2fe',
+                  200: '#bae6fd',
+                  300: '#7dd3fc',
+                  400: '#38bdf8',
+                  500: '#0ea5e9',
+                  600: '#0284c7',
+                  700: '#0369a1',
+                  800: '#075985',
+                  900: '#0c4a6e',
+                  950: '#082f49',
+                },
+                secondary: {
+                  50: '#f0fdf4',
+                  100: '#dcfce7',
+                  200: '#bbf7d0',
+                  300: '#86efac',
+                  400: '#4ade80',
+                  500: '#22c55e',
+                  600: '#16a34a',
+                  700: '#15803d',
+                  800: '#166534',
+                  900: '#14532d',
+                  950: '#052e16',
+                },
+                accent: {
+                  50: '#faf5ff',
+                  100: '#f3e8ff',
+                  200: '#e9d5ff',
+                  300: '#d8b4fe',
+                  400: '#c084fc',
+                  500: '#a855f7',
+                  600: '#9333ea',
+                  700: '#7e22ce',
+                  800: '#6b21a8',
+                  900: '#581c87',
+                  950: '#3b0764',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Base Styles -->
+      <style>
+
+      * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari, newer Edge */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Improve text rendering */
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus outline styles */
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <!-- Enhanced Image Handler -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          // Watch for dynamically added images
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          // Create performance observer
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+                // console.log(`LCP: ${entry.startTime}ms`);
+              }
+              if (entry.entryType === 'first-input') {
+                // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+              }
+              if (entry.entryType === 'layout-shift') {
+                // console.log(`CLS: ${entry.value}`);
+              }
+            });
+          });
+
+          // Observe performance metrics
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          // Log basic performance metrics
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- Offline notification -->
+      <div class="fixed bottom-4 right-4 transform translate-y-full opacity-0 transition-all duration-300 offline:translate-y-0 offline:opacity-100">
+        <div class="bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg">
+          You are currently offline
+        </div>
+      </div>
+   </body>
+</html><element id="41674669-1f95-43a5-bdc6-1586045c2901" data-section-id="41674669-1f95-43a5-bdc6-1586045c2901">
+
+<htmlcode>
+<div id="root">
+  <section id="navbar_hero" class="bg-white dark:bg-neutral-900">
+    <!-- Navigation -->
+    <div x-data="{ isOpen: false }" class="relative">
+      <nav class="fixed w-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-lg z-50 border-b border-neutral-200 dark:border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+              <span class="text-2xl font-bold text-primary-600 font-heading">Estavel AI</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex lg:gap-x-8">
+              <a href="#features" class="text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition px-3 py-2">Features</a>
+              <a href="#contact" class="text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition px-3 py-2">News</a>
+            </div>
+
+            <div class="hidden lg:flex lg:items-center lg:gap-x-6">
+              <a href="#login" class="text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition px-3 py-2">Login</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="flex lg:hidden">
+              <button type="button" @click="isOpen = !isOpen" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-neutral-500 dark:hover:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition" aria-controls="mobile-menu" :aria-expanded="isOpen">
+                <span class="sr-only">Open main menu</span>
+                <svg x-show="!isOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg x-show="isOpen" x-cloak="" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div x-show="isOpen" x-cloak="" class="lg:hidden" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+            <a href="#features" class="block px-3 py-2 text-base font-medium text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition">Features</a>
+            <a href="#how-it-works" class="block px-3 py-2 text-base font-medium text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition">How it Works</a>
+            <div class="mt-4 space-y-2">
+              <a href="#login" class="block px-3 py-2 text-base font-medium text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition">Login</a>
+              <a href="#signup" class="block w-full px-4 py-2 text-center font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative pt-16 overflow-hidden">
+      <div class="relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32">
+          <h1 class="mx-auto max-w-4xl font-heading text-5xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-7xl">
+            <span class="inline">AI-Powered</span>
+            <span class="inline bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"> Law</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+            Revolutionize your legal workflow with our intelligent assistant, secure document vault, and powerful research tools.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#signup" class="rounded-md bg-primary-600 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary-700 transition">
+              Get Started
+            </a>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hero Background Pattern -->
+      <!-- Background Gradient Effect -->
+      <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 via-white-500/20 to-neutral-900 opacity-30"></div>
+      
+      <!-- Animated Grid Pattern -->
+      <div class="absolute inset-0 bg-[linear-gradient(transparent_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:30px_30px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,_black_70%,_transparent_100%)] pointer-events-none">
+      </div>
+    </div>
+  </section>
+  <!-- After the "AI-Powered Law" section and before the "Powerful Features" section -->
+<section class="py-16 bg-neutral-900 text-center">
+  <h2 class="text-4xl sm:text-5xl font-bold text-white mb-8">
+    Ask Estavel anything
+  </h2>
+  
+  <div class="max-w-xl mx-auto relative">
+    <form action="/your-target-page" method="GET" class="flex items-center bg-neutral-800 rounded-full p-2 shadow-md">
+      <!-- You can change "GET" to "POST" if needed and adjust the action URL -->
+      <input 
+        type="text" 
+        name="query" 
+        placeholder="Draft a merger contract"
+        class="flex-1 bg-transparent text-white px-4 py-2 focus:outline-none placeholder:text-neutral-400"
+      >
+      <button type="submit" class="w-12 h-12 rounded-full bg-neutral-700 hover:bg-neutral-600 flex items-center justify-center transition-colors duration-200" aria-label="Send">
+        <i class="fas fa-arrow-right text-white"></i>
+      </button>
+    </form>
+  </div>
+</section>
+
+</div>
+</htmlcode></element><element id="891abc16-2ccd-4305-a210-966f8c808345" data-section-id="891abc16-2ccd-4305-a210-966f8c808345">
+
+<htmlcode>
+<div id="root">
+  <section id="features" class="py-24 bg-white dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h2 class="text-3xl font-bold font-heading text-neutral-900 dark:text-white sm:text-4xl">
+          Powerful Features for Legal Excellence
+        </h2>
+        <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+          Transform your legal practice with our comprehensive suite of AI-powered tools
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Intelligent Assistant -->
+        <div class="relative p-8 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-primary-500 dark:hover:border-primary-500 transition-colors duration-300">
+          <div class="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
+            <i class="fas fa-robot text-2xl text-primary-600 dark:text-primary-400"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-neutral-900 dark:text-white mb-4">Intelligent Assistant</h3>
+          <ul class="space-y-3 text-neutral-600 dark:text-neutral-300">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Answer complex legal queries instantly</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Draft legal documents efficiently</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Guide through legal complexities</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Secure Vault -->
+        <div class="relative p-8 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-primary-500 dark:hover:border-primary-500 transition-colors duration-300">
+          <div class="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
+            <i class="fas fa-vault text-2xl text-primary-600 dark:text-primary-400"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-neutral-900 dark:text-white mb-4">Secure Vault</h3>
+          <ul class="space-y-3 text-neutral-600 dark:text-neutral-300">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>End-to-end encryption for documents</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Organized document management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Secure sharing capabilities</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Research Tool -->
+        <div class="relative p-8 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-primary-500 dark:hover:border-primary-500 transition-colors duration-300">
+          <div class="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
+            <i class="fas fa-search text-2xl text-primary-600 dark:text-primary-400"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-neutral-900 dark:text-white mb-4">Research Tool</h3>
+          <ul class="space-y-3 text-neutral-600 dark:text-neutral-300">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Quick access to case law</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Real-time statute updates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
+              <span>Precedent analysis</span>
+            </li>
+          </ul>
+        </div>
+    </div>
+    </div>
+  </section>
+</div>
+</htmlcode></element><element id="15bca3c2-f7db-47b6-ae1c-8564e965efe6" data-section-id="15bca3c2-f7db-47b6-ae1c-8564e965efe6">
+
+<htmlcode>
+<div id="root">
+  <section id="intelligent_assistant" class="py-24 bg-white dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <!-- Content -->
+        <div class="lg:pr-8">
+          <div class="max-w-xl">
+            <h2 class="text-4xl font-bold font-heading tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+              Intelligent Legal Assistant
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+              Experience the power of AI-driven legal assistance that understands context, analyzes complex scenarios, and provides accurate guidance.
+            </p>
+            
+            <div class="mt-10 space-y-8">
+              <!-- Feature 1 -->
+              <div class="relative">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50">
+                    <i class="fas fa-comments text-xl text-primary-600 dark:text-primary-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Smart Query Responses</h3>
+                    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Get instant, accurate answers to your legal questions with context-aware AI that understands legal terminology and concepts.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="relative">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50">
+                    <i class="fas fa-file-contract text-xl text-primary-600 dark:text-primary-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Document Generation</h3>
+                    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Create legally sound documents with AI-powered drafting that follows best practices and industry standards.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="relative">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50">
+                    <i class="fas fa-map text-xl text-primary-600 dark:text-primary-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Legal Process Navigation</h3>
+                    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Navigate complex legal procedures with step-by-step guidance and clear explanations of requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Demo -->
+        <div class="mt-16 lg:mt-0">
+          <div class="relative bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
+              <video 
+                class="w-full h-auto"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src="/Users/abhiwrld/Downloads/estavel sample.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlcode></element><element id="f185c92f-b450-4a1f-8f3b-3f368ca2d2e6" data-section-id="f185c92f-b450-4a1f-8f3b-3f368ca2d2e6">
+
+<htmlcode>
+<div id="root">
+  <section id="secure_vault" class="py-24 bg-neutral-50 dark:bg-neutral-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <!-- Vault Interface Demo -->
+        <div class="relative mb-12 lg:mb-0">
+          <div class="relative rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
+            <!-- Vault Header -->
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-white">Document Vault</h3>
+              <div class="flex items-center gap-2">
+                <button class="p-2 text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button class="p-2 text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Document List -->
+            <div class="space-y-4">
+              <!-- Document Item -->
+              <div class="p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+                      <i class="fas fa-file-contract text-primary-600 dark:text-primary-400"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 dark:text-white">NDAs and Contracts</h4>
+                      <p class="text-sm text-neutral-500 dark:text-neutral-400">12 documents • Last updated 2 days ago</p>
+                    </div>
+                  </div>
+                  <button class="p-2 text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Document Item -->
+              <div class="p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+                      <i class="fas fa-folder text-primary-600 dark:text-primary-400"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 dark:text-white">Legal Proceedings</h4>
+                      <p class="text-sm text-neutral-500 dark:text-neutral-400">8 documents • Last updated today</p>
+                    </div>
+                  </div>
+                  <button class="p-2 text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Document Item -->
+              <div class="p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+                      <i class="fas fa-shield-alt text-primary-600 dark:text-primary-400"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 dark:text-white">Compliance Documents</h4>
+                      <p class="text-sm text-neutral-500 dark:text-neutral-400">15 documents • Last updated 1 week ago</p>
+                    </div>
+                  </div>
+                  <button class="p-2 text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="lg:pl-8">
+          <div class="max-w-xl">
+            <h2 class="text-4xl font-bold font-heading tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+              Secure Document Vault
+            </h2>
+            <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+              Store, organize, and protect your legal documents with military-grade encryption and intuitive management tools.
+            </p>
+
+            <div class="mt-10 space-y-8">
+              <!-- Security Feature -->
+              <div class="relative">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50">
+                    <i class="fas fa-lock text-xl text-primary-600 dark:text-primary-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">End-to-End Encryption</h3>
+                    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Your documents are encrypted at rest and in transit, ensuring maximum security and confidentiality.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Organization Feature -->
+              <div class="relative">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50">
+                    <i class="fas fa-folders text-xl text-primary-600 dark:text-primary-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Smart Organization</h3>
+                    <p class="mt-2 text-neutral-600 dark:text-neutral-300">AI-powered categorization and tagging system for effortless document management and retrieval.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sharing Feature -->
+              <div class="relative">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50">
+                    <i class="fas fa-share-nodes text-xl text-primary-600 dark:text-primary-400"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Secure Sharing</h3>
+                    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Share documents securely with granular access controls and comprehensive audit trails.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlcode></element><element id="875c133c-91dd-4205-a10f-62963798cabf" data-section-id="875c133c-91dd-4205-a10f-62963798cabf">
+
+<htmlcode>
+<div id="root">
+  <section id="testimonials" class="py-24 bg-white dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold font-heading tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+          Trusted by Legal Professionals
+        </h2>
+        <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
+          See what our users say about their experience with Estavel AI
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="relative p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
+          <div class="flex flex-col h-full">
+            <div class="flex-1">
+              <div class="flex gap-1 mb-4">
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+              </div>
+              <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+                "Estavel AI has revolutionized our legal research process. The AI assistant provides remarkably accurate insights, saving us countless hours of manual research."
+              </blockquote>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-12 h-12 rounded-full">
+              <div>
+                <p class="font-semibold text-neutral-900 dark:text-white">Sarah Mitchell</p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">Senior Partner, Mitchell &amp; Associates</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="relative p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
+          <div class="flex flex-col h-full">
+            <div class="flex-1">
+              <div class="flex gap-1 mb-4">
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+              </div>
+              <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+                "The document vault's security features give us peace of mind, while the AI's ability to draft and analyze complex legal documents is truly impressive."
+              </blockquote>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-12 h-12 rounded-full">
+              <div>
+                <p class="font-semibold text-neutral-900 dark:text-white">David Thompson</p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">Legal Tech Director, Thompson Legal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="relative p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
+          <div class="flex flex-col h-full">
+            <div class="flex-1">
+              <div class="flex gap-1 mb-4">
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+                <i class="fas fa-star text-primary-400"></i>
+              </div>
+              <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+                "As a solo practitioner, Estavel AI has become my indispensable assistant. It's like having a full legal team at my fingertips, available 24/7."
+              </blockquote>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-12 h-12 rounded-full">
+              <div>
+                <p class="font-semibold text-neutral-900 dark:text-white">Jennifer Chen</p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">Independent Legal Consultant</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">98%</p>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">Client Satisfaction</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">5,000+</p>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">Legal Professionals</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">1M+</p>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">Documents Processed</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">24/7</p>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">AI Availability</p>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-16 text-center">
+        <a href="#signup" class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors">
+          Join Successful Users <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlcode></element><element id="a584cebd-0a8c-48f5-8bec-8081a9f7eb56" data-section-id="a584cebd-0a8c-48f5-8bec-8081a9f7eb56">
+
+<htmlcode>
+<div id="root">
+  <footer id="footer" class="bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Main Footer -->
+      <div class="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <!-- Brand Column -->
+        <div class="col-span-2 lg:col-span-2">
+          <div class="text-2xl font-bold text-primary-600 font-heading mb-4">Estavel AI</div>
+          <p class="text-neutral-600 dark:text-neutral-400 mb-6">Revolutionizing legal work with AI-powered solutions for modern legal professionals.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-twitter text-xl"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-linkedin text-xl"></i>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-github text-xl"></i>
+              <span class="sr-only">GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Product</h3>
+          <ul class="space-y-2">
+            <li><a href="#features" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Features</a></li>
+            <li><a href="#pricing" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Pricing</a></li>
+            <li><a href="#security" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Security</a></li>
+            <li><a href="#roadmap" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#documentation" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Documentation</a></li>
+            <li><a href="#api" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">API</a></li>
+            <li><a href="#guides" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Guides</a></li>
+            <li><a href="#blog" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a></li>
+            <li><a href="#careers" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Careers</a></li>
+            <li><a href="#contact" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a></li>
+            <li><a href="#partners" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="py-6 border-t border-neutral-200 dark:border-neutral-800">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div class="text-neutral-500 dark:text-neutral-400 text-sm">
+            © 2024 Estavel AI. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <a href="#privacy" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Privacy Policy</a>
+            <a href="#terms" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Terms of Service</a>
+            <a href="#cookies" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</htmlcode></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          

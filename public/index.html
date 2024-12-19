@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,24 +17,26 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <script>
         tailwind.config = {
+          darkMode: 'class',
           theme: {
             extend: {
               colors: {
                 primary: {
-                  50: '#f0f9ff',
+                  50: '#FAFAF9',
                   100: '#e0f2fe',
                   200: '#bae6fd',
                   300: '#7dd3fc',
                   400: '#38bdf8',
                   500: '#0ea5e9',
                   600: '#0284c7',
+                  650: '#FAFAF9',
                   700: '#0369a1',
                   800: '#075985',
                   900: '#0c4a6e',
                   950: '#082f49',
                 },
                 secondary: {
-                  50: '#f0fdf4',
+                  50: '#FAFAF9',
                   100: '#dcfce7',
                   200: '#bbf7d0',
                   300: '#86efac',
@@ -47,7 +49,7 @@
                   950: '#052e16',
                 },
                 accent: {
-                  50: '#faf5ff',
+                  50: '#FAFAF9',
                   100: '#f3e8ff',
                   200: '#e9d5ff',
                   300: '#d8b4fe',
@@ -61,7 +63,7 @@
                 },
               },
               fontFamily: {
-                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif', 'Merriweather'],
                 heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
               },
               spacing: {
@@ -338,12 +340,12 @@
    <body class="antialiased text-gray-800 min-h-screen flex flex-col">
       <!-- Skip to main content link for accessibility -->
       <a href="#main-content" 
-         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-black focus:text-black">
          Skip to main content
       </a>
 
       <!-- Header -->
-      <header class="relative z-50 bg-white dark:bg-gray-900">
+      <header class="relative z-50 bg-black dark:bg-gray-900">
         <!-- Header content goes here -->
       </header>
 
@@ -361,17 +363,23 @@
    </body>
 </html><element id="41674669-1f95-43a5-bdc6-1586045c2901" data-section-id="41674669-1f95-43a5-bdc6-1586045c2901">
 
-<htmlcode>
+<htmlcode class="dark">
 <div id="root">
-  <section id="navbar_hero" class="bg-white dark:bg-neutral-900">
+  <section id="navbar_hero" class="bg-neutral-900 text-white">
     <!-- Navigation -->
     <div x-data="{ isOpen: false }" class="relative">
-      <nav class="fixed w-full bg-white/80 dark:bg-neutral-900/80 backdrop-blur-lg z-50 border-b border-neutral-200 dark:border-neutral-800">
+      <nav class="fixed w-full bg-neutral-900 text-white dark:bg-neutral-900/80 backdrop-blur-lg z-50 border-b border-neutral-200 dark:border-neutral-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16">
             <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-              <span class="text-2xl font-bold text-primary-600 font-heading">Estavel AI</span>
+            <style>
+              .font-merriweather {
+                font-family: 'Merriweather', serif;
+              }
+            </style>
+            <div class="flex-shrink-0 flex items-center space-x-2">
+              <img src="../public/estavel.png" alt="Logo" class="h-5 w-auto"/>
+              <span class="text-2xl text-white font-merriweather">Estavel AI</span>
             </div>
 
             <!-- Desktop Navigation -->
@@ -401,7 +409,7 @@
 
         <!-- Mobile menu -->
         <div x-show="isOpen" x-cloak="" class="lg:hidden" id="mobile-menu">
-          <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+          <div class="px-2 pt-2 pb-3 space-y-1 bg-neutral-900 text-white border-b border-neutral-200 dark:border-neutral-800">
             <a href="#features" class="block px-3 py-2 text-base font-medium text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition">Features</a>
             <a href="#how-it-works" class="block px-3 py-2 text-base font-medium text-neutral-600 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-500 transition">How it Works</a>
             <div class="mt-4 space-y-2">
@@ -414,66 +422,82 @@
     </div>
 
     <!-- Hero Section -->
-    <div class="relative pt-16 overflow-hidden">
+    <div class="relative pt-2 overflow-hidden">
       <div class="relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32">
-          <h1 class="mx-auto max-w-4xl font-heading text-5xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-7xl">
-            <span class="inline">AI-Powered</span>
-            <span class="inline bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"> Law</span>
+          <h1 class="mx-auto max-w-4xl font-heading text-8xl tracking-tight sm:text-8xl">
+            <span class="inline font-merriweather">Proficient</span><br>
+            <span class="inline font-merriweather">Legal AI</span>
           </h1>
-          <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+          <p class="mx-auto mt-6 max-w-2xl text-xl leading-8 text-neutral-600 dark:text-neutral-300">
             Revolutionize your legal workflow with our intelligent assistant, secure document vault, and powerful research tools.
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#signup" class="rounded-md bg-primary-600 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary-700 transition">
+            <a href="#signup" class="rounded-md bg-primary-650 px-6 py-3 text-lg font-semibold text-black shadow-sm hover:bg-primary-700 transition">
               Get Started
             </a>
             </a>
           </div>
         </div>
       </div>
-      
+      <!---->
       <!-- Hero Background Pattern -->
       <!-- Background Gradient Effect -->
-      <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 via-white-500/20 to-neutral-900 opacity-30"></div>
+      <!--div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 via-white-500/20 to-neutral-900 opacity-30"></div>
       
       <!-- Animated Grid Pattern -->
-      <div class="absolute inset-0 bg-[linear-gradient(transparent_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:30px_30px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,_black_70%,_transparent_100%)] pointer-events-none">
+      <!--div class="absolute inset-0 bg-[linear-gradient(transparent_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:30px_30px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,_black_70%,_transparent_100%)] pointer-events-none">
+      </div>
+    </div-->
+  </section>
+
+  <!-- After the "AI-Powered Law" section and before the "Powerful Features" section -->
+  
+  <section class="relative pt-2 py-12 bg-neutral-900 text-center">
+    <h2 class="text-4xl sm:text-5xl font-bold text-white mb-8">
+      Ask Estavel anything
+    </h2>
+  
+    <div class="max-w-xl mx-auto relative">
+      <div class="flex items-center bg-neutral-800 rounded-full px-4 py-2 shadow-md space-x-4">
+        
+  
+        <!-- Input Field -->
+        <input 
+          type="text" 
+          placeholder="Message Estavel"
+          class="flex-1 bg-transparent text-white focus:outline-none placeholder:text-neutral-400"
+        >
+  
+        <!-- Right-Side Icon (e.g., audio or send) -->
+        <button class="w-12 h-12 rounded-full bg-white hover:bg-neutral-100 flex items-center justify-center transition-colors duration-200" aria-label="Send">
+          <!-- Use any icon you like, this example uses a microphone-like icon -->
+          <i class="fas fa-paper-plane text-neutral-900"></i>
+        </button>
       </div>
     </div>
-  </section>
-  <!-- After the "AI-Powered Law" section and before the "Powerful Features" section -->
-<section class="py-16 bg-neutral-900 text-center">
-  <h2 class="text-4xl sm:text-5xl font-bold text-white mb-8">
-    Ask Estavel anything
-  </h2>
   
-  <div class="max-w-xl mx-auto relative">
-    <form action="/your-target-page" method="GET" class="flex items-center bg-neutral-800 rounded-full p-2 shadow-md">
-      <!-- You can change "GET" to "POST" if needed and adjust the action URL -->
-      <input 
-        type="text" 
-        name="query" 
-        placeholder="Draft a merger contract"
-        class="flex-1 bg-transparent text-white px-4 py-2 focus:outline-none placeholder:text-neutral-400"
-      >
-      <button type="submit" class="w-12 h-12 rounded-full bg-neutral-700 hover:bg-neutral-600 flex items-center justify-center transition-colors duration-200" aria-label="Send">
-        <i class="fas fa-arrow-right text-white"></i>
-      </button>
-    </form>
-  </div>
-</section>
+    <!-- Action Buttons below (optional) -->
+    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+      <button class="px-4 py-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-neutral-700 transition-colors">Draft an NDA</button>
+      <button class="px-4 py-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-neutral-700 transition-colors">What is Article 21?</button>
+      <button class="px-4 py-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-neutral-700 transition-colors">File an FIR</button>
+      <button class="px-4 py-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-neutral-700 transition-colors">Analyse document</button>
+    </div>
+  </section>
+  
+  
 
 </div>
 </htmlcode></element><element id="891abc16-2ccd-4305-a210-966f8c808345" data-section-id="891abc16-2ccd-4305-a210-966f8c808345">
 
-<htmlcode>
+<htmlcode class="dark">
 <div id="root">
-  <section id="features" class="py-24 bg-white dark:bg-neutral-900">
+  <section id="features" class="bg-neutral-900 text-white relative pt-5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-20">
-        <h2 class="text-3xl font-bold font-heading text-neutral-900 dark:text-white sm:text-4xl">
+        <h2 class="text-3xl font-bold font-heading  sm:text-4xl">
           Powerful Features for Legal Excellence
         </h2>
         <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
@@ -488,7 +512,7 @@
           <div class="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
             <i class="fas fa-robot text-2xl text-primary-600 dark:text-primary-400"></i>
           </div>
-          <h3 class="text-xl font-bold font-heading text-neutral-900 dark:text-white mb-4">Intelligent Assistant</h3>
+          <h3 class="text-xl font-bold font-heading  mb-4">Intelligent Assistant</h3>
           <ul class="space-y-3 text-neutral-600 dark:text-neutral-300">
             <li class="flex items-start gap-2">
               <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
@@ -510,7 +534,7 @@
           <div class="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
             <i class="fas fa-vault text-2xl text-primary-600 dark:text-primary-400"></i>
           </div>
-          <h3 class="text-xl font-bold font-heading text-neutral-900 dark:text-white mb-4">Secure Vault</h3>
+          <h3 class="text-xl font-bold font-heading  mb-4">Secure Vault</h3>
           <ul class="space-y-3 text-neutral-600 dark:text-neutral-300">
             <li class="flex items-start gap-2">
               <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
@@ -532,7 +556,7 @@
           <div class="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
             <i class="fas fa-search text-2xl text-primary-600 dark:text-primary-400"></i>
           </div>
-          <h3 class="text-xl font-bold font-heading text-neutral-900 dark:text-white mb-4">Research Tool</h3>
+          <h3 class="text-xl font-bold font-heading  mb-4">Research Tool</h3>
           <ul class="space-y-3 text-neutral-600 dark:text-neutral-300">
             <li class="flex items-start gap-2">
               <i class="fas fa-check text-primary-600 dark:text-primary-400 mt-1"></i>
@@ -554,15 +578,15 @@
 </div>
 </htmlcode></element><element id="15bca3c2-f7db-47b6-ae1c-8564e965efe6" data-section-id="15bca3c2-f7db-47b6-ae1c-8564e965efe6">
 
-<htmlcode>
+<htmlcode class="dark">
 <div id="root">
-  <section id="intelligent_assistant" class="py-24 bg-white dark:bg-neutral-900">
+  <section id="intelligent_assistant" class="py-24 bg-neutral-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
         <!-- Content -->
         <div class="lg:pr-8">
           <div class="max-w-xl">
-            <h2 class="text-4xl font-bold font-heading tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+            <h2 class="text-4xl font-bold font-heading tracking-tight  sm:text-5xl">
               Intelligent Legal Assistant
             </h2>
             <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
@@ -577,7 +601,7 @@
                     <i class="fas fa-comments text-xl text-primary-600 dark:text-primary-400"></i>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Smart Query Responses</h3>
+                    <h3 class="font-semibold text-xl ">Smart Query Responses</h3>
                     <p class="mt-2 text-neutral-600 dark:text-neutral-300">Get instant, accurate answers to your legal questions with context-aware AI that understands legal terminology and concepts.</p>
                   </div>
                 </div>
@@ -590,7 +614,7 @@
                     <i class="fas fa-file-contract text-xl text-primary-600 dark:text-primary-400"></i>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Document Generation</h3>
+                    <h3 class="font-semibold text-xl ">Document Generation</h3>
                     <p class="mt-2 text-neutral-600 dark:text-neutral-300">Create legally sound documents with AI-powered drafting that follows best practices and industry standards.</p>
                   </div>
                 </div>
@@ -603,7 +627,7 @@
                     <i class="fas fa-map text-xl text-primary-600 dark:text-primary-400"></i>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Legal Process Navigation</h3>
+                    <h3 class="font-semibold text-xl ">Legal Process Navigation</h3>
                     <p class="mt-2 text-neutral-600 dark:text-neutral-300">Navigate complex legal procedures with step-by-step guidance and clear explanations of requirements.</p>
                   </div>
                 </div>
@@ -633,17 +657,17 @@
 </div>
 </htmlcode></element><element id="f185c92f-b450-4a1f-8f3b-3f368ca2d2e6" data-section-id="f185c92f-b450-4a1f-8f3b-3f368ca2d2e6">
 
-<htmlcode>
+<htmlcode class="dark">
 <div id="root">
-  <section id="secure_vault" class="py-24 bg-neutral-50 dark:bg-neutral-900/50">
+  <section id="secure_vault" class="bg-neutral-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
         <!-- Vault Interface Demo -->
         <div class="relative mb-12 lg:mb-0">
-          <div class="relative rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
+          <div class="relative rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6 bg-neutral-900 text-white backdrop-blur-sm">
             <!-- Vault Header -->
             <div class="flex items-center justify-between mb-6">
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-white">Document Vault</h3>
+              <h3 class="text-xl font-bold ">Document Vault</h3>
               <div class="flex items-center gap-2">
                 <button class="p-2 text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   <i class="fas fa-plus"></i>
@@ -664,7 +688,7 @@
                       <i class="fas fa-file-contract text-primary-600 dark:text-primary-400"></i>
                     </div>
                     <div>
-                      <h4 class="font-medium text-neutral-900 dark:text-white">NDAs and Contracts</h4>
+                      <h4 class="font-medium ">NDAs and Contracts</h4>
                       <p class="text-sm text-neutral-500 dark:text-neutral-400">12 documents • Last updated 2 days ago</p>
                     </div>
                   </div>
@@ -682,7 +706,7 @@
                       <i class="fas fa-folder text-primary-600 dark:text-primary-400"></i>
                     </div>
                     <div>
-                      <h4 class="font-medium text-neutral-900 dark:text-white">Legal Proceedings</h4>
+                      <h4 class="font-medium ">Legal Proceedings</h4>
                       <p class="text-sm text-neutral-500 dark:text-neutral-400">8 documents • Last updated today</p>
                     </div>
                   </div>
@@ -700,7 +724,7 @@
                       <i class="fas fa-shield-alt text-primary-600 dark:text-primary-400"></i>
                     </div>
                     <div>
-                      <h4 class="font-medium text-neutral-900 dark:text-white">Compliance Documents</h4>
+                      <h4 class="font-medium ">Compliance Documents</h4>
                       <p class="text-sm text-neutral-500 dark:text-neutral-400">15 documents • Last updated 1 week ago</p>
                     </div>
                   </div>
@@ -716,7 +740,7 @@
         <!-- Content -->
         <div class="lg:pl-8">
           <div class="max-w-xl">
-            <h2 class="text-4xl font-bold font-heading tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+            <h2 class="text-4xl font-bold font-heading tracking-tight  sm:text-5xl">
               Secure Document Vault
             </h2>
             <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
@@ -731,7 +755,7 @@
                     <i class="fas fa-lock text-xl text-primary-600 dark:text-primary-400"></i>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">End-to-End Encryption</h3>
+                    <h3 class="font-semibold text-xl ">End-to-End Encryption</h3>
                     <p class="mt-2 text-neutral-600 dark:text-neutral-300">Your documents are encrypted at rest and in transit, ensuring maximum security and confidentiality.</p>
                   </div>
                 </div>
@@ -744,7 +768,7 @@
                     <i class="fas fa-folders text-xl text-primary-600 dark:text-primary-400"></i>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Smart Organization</h3>
+                    <h3 class="font-semibold text-xl ">Smart Organization</h3>
                     <p class="mt-2 text-neutral-600 dark:text-neutral-300">AI-powered categorization and tagging system for effortless document management and retrieval.</p>
                   </div>
                 </div>
@@ -757,7 +781,7 @@
                     <i class="fas fa-share-nodes text-xl text-primary-600 dark:text-primary-400"></i>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-xl text-neutral-900 dark:text-white">Secure Sharing</h3>
+                    <h3 class="font-semibold text-xl ">Secure Sharing</h3>
                     <p class="mt-2 text-neutral-600 dark:text-neutral-300">Share documents securely with granular access controls and comprehensive audit trails.</p>
                   </div>
                 </div>
@@ -771,130 +795,93 @@
 </div>
 </htmlcode></element><element id="875c133c-91dd-4205-a10f-62963798cabf" data-section-id="875c133c-91dd-4205-a10f-62963798cabf">
 
-<htmlcode>
+  <html lang="en" class="dark">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!-- Tailwind CSS and Font Awesome (if not already included) -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body class="bg-neutral-900 text-white">
+    <section class="py-24 px-4" style="background-color: #171717;" x-data="{
+      currentSlide: 0,
+      testimonials: [
+        {
+          quote: '“We want to free the lawyer from mundane, routine tasks, so that they can focus on what matters — strategy, advice, and judgment. This has become the mantra for my team.”',
+          name: 'David Wakeling',
+          role: 'Global Head of Markets Innovation Group (MIG) and AI Advisory Practice, A&O Shearman',
+          image: 'https://via.placeholder.com/600x800'
+        },
+        {
+          quote: '“Estavel AI has transformed our firm. The time we save is now spent strategizing and serving clients more effectively.”',
+          name: 'Sarah Mitchell',
+          role: 'Senior Partner, Mitchell & Associates',
+          image: 'https://via.placeholder.com/600x800/999/fff?text=Sarah'
+        },
+        {
+          quote: '“Our team embraces complexity, and Estavel’s AI insights help us navigate it with confidence. We can’t imagine going back.”',
+          name: 'David Thompson',
+          role: 'Legal Tech Director, Thompson Legal',
+          image: 'https://via.placeholder.com/600x800/555/fff?text=David'
+        }
+      ],
+      get maxIndex() { return this.testimonials.length - 1 },
+      next() {
+        this.currentSlide = (this.currentSlide + 1) % this.testimonials.length;
+      },
+      prev() {
+        this.currentSlide = (this.currentSlide - 1 + this.testimonials.length) % this.testimonials.length;
+      }
+    }">
+      <div class="max-w-7xl mx-auto relative px-12"> <!-- Added extra horizontal padding -->
+        <!-- Slides -->
+        <template x-for="(testimonial, index) in testimonials" :key="index">
+          <div 
+            x-show="currentSlide === index" 
+            x-transition 
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          >
+            <!-- Image Section -->
+            <div class="flex justify-center lg:justify-end">
+              <!-- Reduced max width from md to sm -->
+              <div class="w-full max-w-sm">
+                <img 
+                  :src="testimonial.image" 
+                  alt="Portrait" 
+                  class="w-full h-auto rounded shadow-md object-cover"
+                >
+              </div>
+            </div>
+            
+            <!-- Quote Section -->
+            <div class="text-left">
+              <blockquote class="text-3xl sm:text-4xl font-serif leading-snug mb-8" x-text="testimonial.quote"></blockquote>
+              <div>
+                <p class="font-semibold text-lg mb-1" x-text="testimonial.name"></p>
+                <!-- Use a lighter text color for better contrast on dark bg -->
+                <p class="text-neutral-200" x-text="testimonial.role"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+    
+        <!-- Navigation Buttons -->
+        <button @click="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-neutral-100 text-neutral-900 px-4 py-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 transition" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button @click="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-neutral-100 text-neutral-900 px-4 py-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 transition" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+    </body>
+    </html>
+    
+
+<htmlcode class="dark">
 <div id="root">
-  <section id="testimonials" class="py-24 bg-white dark:bg-neutral-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold font-heading tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
-          Trusted by Legal Professionals
-        </h2>
-        <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
-          See what our users say about their experience with Estavel AI
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
-        <div class="relative p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
-          <div class="flex flex-col h-full">
-            <div class="flex-1">
-              <div class="flex gap-1 mb-4">
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-              </div>
-              <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-                "Estavel AI has revolutionized our legal research process. The AI assistant provides remarkably accurate insights, saving us countless hours of manual research."
-              </blockquote>
-            </div>
-            <div class="flex items-center gap-4">
-              <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-12 h-12 rounded-full">
-              <div>
-                <p class="font-semibold text-neutral-900 dark:text-white">Sarah Mitchell</p>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">Senior Partner, Mitchell &amp; Associates</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="relative p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
-          <div class="flex flex-col h-full">
-            <div class="flex-1">
-              <div class="flex gap-1 mb-4">
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-              </div>
-              <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-                "The document vault's security features give us peace of mind, while the AI's ability to draft and analyze complex legal documents is truly impressive."
-              </blockquote>
-            </div>
-            <div class="flex items-center gap-4">
-              <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-12 h-12 rounded-full">
-              <div>
-                <p class="font-semibold text-neutral-900 dark:text-white">David Thompson</p>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">Legal Tech Director, Thompson Legal</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="relative p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 backdrop-blur-sm">
-          <div class="flex flex-col h-full">
-            <div class="flex-1">
-              <div class="flex gap-1 mb-4">
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-                <i class="fas fa-star text-primary-400"></i>
-              </div>
-              <blockquote class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-                "As a solo practitioner, Estavel AI has become my indispensable assistant. It's like having a full legal team at my fingertips, available 24/7."
-              </blockquote>
-            </div>
-            <div class="flex items-center gap-4">
-              <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-12 h-12 rounded-full">
-              <div>
-                <p class="font-semibold text-neutral-900 dark:text-white">Jennifer Chen</p>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">Independent Legal Consultant</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Stats Section -->
-      <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center">
-          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">98%</p>
-          <p class="mt-2 text-neutral-600 dark:text-neutral-400">Client Satisfaction</p>
-        </div>
-        <div class="text-center">
-          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">5,000+</p>
-          <p class="mt-2 text-neutral-600 dark:text-neutral-400">Legal Professionals</p>
-        </div>
-        <div class="text-center">
-          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">1M+</p>
-          <p class="mt-2 text-neutral-600 dark:text-neutral-400">Documents Processed</p>
-        </div>
-        <div class="text-center">
-          <p class="text-4xl font-bold text-primary-600 dark:text-primary-400">24/7</p>
-          <p class="mt-2 text-neutral-600 dark:text-neutral-400">AI Availability</p>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-16 text-center">
-        <a href="#signup" class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors">
-          Join Successful Users <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
-</htmlcode></element><element id="a584cebd-0a8c-48f5-8bec-8081a9f7eb56" data-section-id="a584cebd-0a8c-48f5-8bec-8081a9f7eb56">
-
-<htmlcode>
-<div id="root">
-  <footer id="footer" class="bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
+  <footer id="footer" class="bg-neutral-900 text-white border-t border-neutral-200 dark:border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Main Footer -->
       <div class="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
@@ -918,34 +905,12 @@
           </div>
         </div>
 
-        <!-- Product Links -->
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Product</h3>
-          <ul class="space-y-2">
-            <li><a href="#features" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Features</a></li>
-            <li><a href="#pricing" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Pricing</a></li>
-            <li><a href="#security" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Security</a></li>
-            <li><a href="#roadmap" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Roadmap</a></li>
-          </ul>
-        </div>
-
-        <!-- Resources Links -->
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Resources</h3>
-          <ul class="space-y-2">
-            <li><a href="#documentation" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Documentation</a></li>
-            <li><a href="#api" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">API</a></li>
-            <li><a href="#guides" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Guides</a></li>
-            <li><a href="#blog" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Blog</a></li>
-          </ul>
-        </div>
-
         <!-- Company Links -->
         <div>
-          <h3 class="text-sm font-semibold text-neutral-900 dark:text-white uppercase tracking-wider mb-4">Company</h3>
+          <h3 class="text-sm font-semibold  uppercase tracking-wider mb-4">Company</h3>
           <ul class="space-y-2">
             <li><a href="#about" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a></li>
-            <li><a href="#careers" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Careers</a></li>
+            <li><a href="#careers" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">News</a></li>
             <li><a href="#contact" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a></li>
             <li><a href="#partners" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Partners</a></li>
           </ul>
